@@ -4,8 +4,10 @@
   "description": "React Learning 101",
   "scripts": {
     "test": "jest",
-    "production-build": "npx parcel build index.html",
-    "dev-build":"npx parcel index.html"
+    "production-build": "parcel build index.html",
+    "dev-build":"parcel index.html",
+    "start":"parcel index.html",
+    "build":"parcel build index.html"
   },
   "repository": {
     "type": "git",
