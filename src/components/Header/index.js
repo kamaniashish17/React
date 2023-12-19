@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { LOGO_URL } from "../../utils/constants";
 
 const Header = () => {
   return (
@@ -7,7 +8,7 @@ const Header = () => {
       <div className="logo-container">
         <img
           className="logo"
-          src="https://w7.pngwing.com/pngs/47/533/png-transparent-swiggy-office-business-online-food-ordering-delivery-bangalore-business-food-text-orange.png"
+          src={`${LOGO_URL}`}
         />
       </div>
       <div className="nav-items">

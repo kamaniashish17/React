@@ -1,6 +1,3 @@
-import React from "react"
-import RestaurantCard from "../Card"
-
 
 const resList=[
     {
@@ -2188,23 +2185,4 @@ const resList=[
       }
 ]
 
-const Body = () =>{
-    console.log(resList.length)
-    return(
-    <div className="body">
-        <div className="search">
-            Search
-        </div>
-        <div className="res-container">
-            {resList.map((restaurant) =>{
-                return(
-                    <RestaurantCard key={restaurant.info.id} resData={restaurant} />
-                )
-            })}
-        </div>
-    </div>
-    )
-}
-
-
-export default Body
+export default resList;

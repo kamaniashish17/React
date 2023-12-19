@@ -1,28 +1,12 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import Header from "./Header/index"
-import Body from "./Body/index"
+import Header from "./components/Header"
+import Body from "./components/Body"
+import { bodyVariable } from "./components/Body"
 
-/**
- * Header
- *  - Logo
- *  - NavItems
- * Body
- *  - Search
- *  - Restaurant Container
- *    - Restaurant Card
- *      - Img
- *      - Name of the Restaurant
- *      - Star Rating
- *      - Cuisine
- *      - Time for Delivery
- * Footer
- *  - Copyright
- *  - Address
- *  - Contact
- */
 
 const AppLayout = ()=>{
+  console.log(bodyVariable)
   return(
     <div className="app">
       <Header/>
