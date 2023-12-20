@@ -3,6 +3,7 @@ import RestaurantCard from "../Card"
 import resList from "../../utils/mockData"
 import { useState, useEffect } from "react"
 import ShimmerUI  from "../Shimmer"
+import { Link } from "react-router-dom"
 
 export const bodyVariable = "ashisKamani"
 
@@ -68,7 +69,8 @@ const ClickHandler = () =>{
         <div className="res-container">
             {filteredRestaurant.map((restaurant) =>{
                 return(
-                    <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+
+                  <Link key={restaurant.info.id} to={`/restaurants/${restaurant.info.id}`}>  <RestaurantCard  resData={restaurant} /> </Link>
                 )
             })}
         </div>

@@ -54,3 +54,9 @@
     - Its a normal JS Utility function which provides edge to your web application
 -   useState() -> superpowerful state variables.
 -   useEffect()
+
+
+# Routing in Web Apps
+- There are two types of routing
+    -   Client Side Routing - Doesnt make any network call -> Already has the componet -> It just loads the component
+    -   Server Side Routing - Makes a network call -> fetches the data -> Render the HTML

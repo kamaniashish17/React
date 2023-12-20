@@ -1,5 +1,6 @@
 import React from "react";
 import {MEDIA_URL} from "../../utils/constants"
+import { Link } from "react-router-dom";
 
 const styleCard = {
   backgroundColor: "#f0f0f0",
