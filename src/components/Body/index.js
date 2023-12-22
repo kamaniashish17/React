@@ -4,7 +4,7 @@ import resList from "../../utils/mockData"
 import { useState, useEffect } from "react"
 import ShimmerUI  from "../Shimmer"
 import { Link } from "react-router-dom"
-
+import useOnlineStatus from "../../utils/useOnlineStatus"
 export const bodyVariable = "ashisKamani"
 
 const Body = () =>{
@@ -12,7 +12,7 @@ const Body = () =>{
   const [listofRestaurant, setListOfRestaurant] = useState([])
   const [searchText, setSearchText] = useState("")
   const [filteredRestaurant, setFilteredRestaurant] = useState([])
-
+  const onlineStatus = useOnlineStatus()
   useEffect(()=>{
     console.log("Called After the body is rendered")
     fetchData()
@@ -46,6 +46,14 @@ const ClickHandler = () =>{
   setListOfRestaurant(filteredList)
   setFilteredRestaurant(filteredList)
 }
+  if(onlineStatus === false){
+    return(
+      <h1>
+        It seems you are Offline! Please check you network connection and try again
+      </h1>
+    )
+  }
+
 
   //Conditional Rendering
   if(listofRestaurant.length === 0){

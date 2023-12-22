@@ -1,26 +1,32 @@
 import React, { useEffect, useState } from "react";
 import ShimmerUI from "../Shimmer";
 import { useParams } from "react-router";
+import useRestaurantMenu from "../../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-    const [resInfo, setResInfo] = useState(null);
+  const {resId} = useParams()
+  //   const [resInfo, setResInfo] = useState(null);
+
     
-    const {resId} = useParams()
-  useEffect(() => {
-    fetchMenu();
-  }, []);
+  // useEffect(() => {
+  //   fetchMenu();
+  // }, []);
 
-  const fetchMenu = async () => {
-    const data = await fetch(
-      `https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=${resId}&catalog_qa=undefined&submitAction=ENTER`
-    );
+  // const fetchMenu = async () => {
+  //   const data = await fetch(
+  //     `https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=${resId}&catalog_qa=undefined&submitAction=ENTER`
+  //   );
 
-    const json = await data.json();
+  //   const json = await data.json();
 
-    console.log(json.data);
-    setResInfo(json.data);
+  //   console.log(json.data);
+  //   setResInfo(json.data);
 
-  };
+  // };
+
+  //Applying Custom Hooks
+
+  const resInfo = useRestaurantMenu(resId)
 
   if(resInfo === null)
     return <ShimmerUI />
