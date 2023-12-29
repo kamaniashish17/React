@@ -28,6 +28,14 @@ const RestaurantMenu = () => {
 
   const resInfo = useRestaurantMenu(resId)
 
+  console.log("ResInfo", resInfo?.cards[0]?.card?.card?.info)
+
+  const itemCategories = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>{
+    return c?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+  })
+
+  console.log("Categories", itemCategories)
+
   if(resInfo === null)
     return <ShimmerUI />
 
@@ -38,7 +46,7 @@ const RestaurantMenu = () => {
   console.log(itemCards)
 
   return (
-    <div className="restaurant-menu">
+    <div className="restaurant-menu max-w-3xl my-20 mx-auto">
       <h1>{name}</h1>
       <h2>{cuisines.join(', ')}</h2>
       <h3>{avgRating}</h3>
