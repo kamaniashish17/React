@@ -1,10 +1,11 @@
 import React from "react";
 import RestaurantCard, { withMostPopularLabel } from "../Card";
 import resList from "../../utils/mockData";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import ShimmerUI from "../Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
+import UserContext from "../../utils/UserContext";
 export const bodyVariable = "ashisKamani";
 
 const Body = () => {
@@ -75,6 +76,8 @@ const Body = () => {
     return <ShimmerUI />;
   }
 
+  const {loggedInUser, setUserName } = useContext(UserContext)
+
   console.log(resList.length);
   return (
     <div className="body">
@@ -102,6 +105,10 @@ const Body = () => {
           >
             Top Rated Restaurants
           </button>
+        </div>
+        {/** Changing the Context Value live by passing the setUserName from the root level to its children */}
+        <div className="filterRestaurant m-4 p-4">
+           UserName: <input type="text" className="p-2" onChange={(e)=>{setUserName(e.target.value)}}  value={loggedInUser}/>
         </div>
       </div>
       {listofRestaurant && (

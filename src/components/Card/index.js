@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import {MEDIA_URL} from "../../utils/constants"
+import UserContext from "../../utils/UserContext";
 
 const styleCard = {
   backgroundColor: "#f0f0f0",
@@ -9,6 +10,8 @@ const RestaurantCard = (props) => {
     const {resData} = props
     const {cloudinaryImageId, name, cuisines, costForTwo, avgRating, id} = resData?.info
     const {deliveryTime} = resData?.info?.sla
+
+    const {loggedInUser} = useContext(UserContext)
   return (
     <div className="res-card p-4 m-4 w-64 rounded-lg" style={styleCard}>
       <img
@@ -21,7 +24,8 @@ const RestaurantCard = (props) => {
       <h4>{costForTwo}</h4>
       <h4>{`${avgRating} stars`}</h4>
       <h4>{`${deliveryTime} minutes`}</h4>
-
+      {/**Using Context to get the data without Drilling the props */}
+      <h4>{loggedInUser}</h4>
     </div>
   );
 };

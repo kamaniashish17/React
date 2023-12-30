@@ -1,50 +1,65 @@
-import React from "react"
-import ReactDOM from "react-dom/client"
-import Header from "./components/Header"
-import Body from "./components/Body"
-import { bodyVariable } from "./components/Body"
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"
-import About from "./components/About"
-import ContactUs from "./components/Contact-Us"
-import Error from "./components/Error"
-import RestaurantMenu from "./components/RestaurantMenu"
+import React, { useEffect, useState } from "react";
+import ReactDOM from "react-dom/client";
+import Header from "./components/Header";
+import Body from "./components/Body";
+import { bodyVariable } from "./components/Body";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import About from "./components/About";
+import ContactUs from "./components/Contact-Us";
+import Error from "./components/Error";
+import RestaurantMenu from "./components/RestaurantMenu";
+import UserContext from "./utils/UserContext";
 
-const AppLayout = ()=>{
-  console.log(bodyVariable)
-  return(
+const AppLayout = () => {
+  const [userName, setUserName] = useState();
+
+  useEffect(() => {
+    //Authentication code written over here for user
+
+    const data = {
+      name: "Ashis Kamani",
+    };
+
+    setUserName(data.name);
+  }, []);
+
+  console.log(bodyVariable);
+  return (
     <div className="app">
-      <Header/>
-      <Outlet />
+    {/** Modifying the Context using Provider */}
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <Header />
+        <Outlet />
+      </UserContext.Provider>
     </div>
-  )
-}
+  );
+};
 
 const appRouter = createBrowserRouter([
   {
-    path:'/',
+    path: "/",
     element: <AppLayout />,
-    children:[
+    children: [
       {
-        path:'/',
-        element: <Body />
+        path: "/",
+        element: <Body />,
       },
       {
-        path:'/about',
-        element: <About />
+        path: "/about",
+        element: <About />,
       },
       {
-        path:'/contact-us',
-        element: <ContactUs />
+        path: "/contact-us",
+        element: <ContactUs />,
       },
       {
-        path: '/restaurants/:resId',
-        element: <RestaurantMenu />
+        path: "/restaurants/:resId",
+        element: <RestaurantMenu />,
       },
     ],
-    errorElement: <Error />
+    errorElement: <Error />,
   },
-])
-
+]);
 
 //React Element
 // const heading = (
@@ -52,7 +67,6 @@ const appRouter = createBrowserRouter([
 //     This is nothing but a React Element
 //   </h1>
 // )
-
 
 // const Title = ()=>{
 //   return(
@@ -74,7 +88,6 @@ const appRouter = createBrowserRouter([
 //   )
 // }
 
-const root = ReactDOM.createRoot(document.getElementById("root"))
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<RouterProvider router={appRouter} />)
-
+root.render(<RouterProvider router={appRouter} />);
