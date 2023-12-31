@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { useState, useEffect } from "react";
+import {useSelector} from "react-redux"
 import { LOGO_URL } from "../../utils/constants";
 import { Link } from "react-router-dom";
 
@@ -16,6 +17,13 @@ const Header = () => {
   // useEffect(()=>{
   //   console.log("will be called in every render")
   // })
+  
+
+  //Subscribing to the store using the Selector
+  const cartItems = useSelector((store) => store.cart.items)
+  console.log("Cart Items", cartItems)
+  
+
 
   //If the dependency array is empty => useEffect will be called only once after the initial render
   useEffect(() => {
@@ -40,7 +48,8 @@ const Header = () => {
           <li className="px-4">
             <Link to="/contact-us">ContactUs</Link>
           </li>
-          <li className="px-4">Cart</li>
+          <li className="px-4 font-bold">
+          <Link to="/cart">Cart- {cartItems.length} items</Link></li>
           <button
             className="login px-4"
             onClick={() => {

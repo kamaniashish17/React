@@ -1,7 +1,15 @@
 import React from "react";
 import { MEDIA_URL } from "../../utils/constants";
+import { addItems } from "../../utils/Store/Slices/cartSlice";
+import {useDispatch} from "react-redux"
 
 const ItemList = ({ items }) => {
+  const dispatch = useDispatch()
+
+  const handleItem = (item)=>{
+    console.log(item)
+    dispatch(addItems(item))
+  }
   console.log(items);
   return (
     <div>
@@ -30,7 +38,7 @@ const ItemList = ({ items }) => {
                   className="w-40 rounded-xl h-auto"
                 />
                 <div className="absolute">
-                  <button className="p-2 bg-black text-white shadow-lg mx-5 rounded-lg">
+                  <button className="p-2 bg-black text-white shadow-lg mx-5 rounded-lg" onClick={()=> handleItem(item)}>
                     Add +
                   </button>
                 </div>
