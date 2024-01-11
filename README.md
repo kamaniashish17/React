@@ -93,3 +93,23 @@
 -   Create a Slice in the store
 -   Dispatch an Action
 -   Read the data through the selector
+
+#   Testing Library
+-   Install React Testing Library
+-   Installed Jest since RTL uses jest to test the components
+-   Installed Babel dependencies.
+-   Configure Babel.config.js
+
+#   Setting up Testing in our app
+-   Installed React Tesing Library
+-   Installed jest
+-   Installed Babel Dependencies
+-   Configure Babel
+-   Configure Parcelrc file to disable default Babel Transpilation coming from Parcel (.parcelrc file)
+
+#   Jest Configuration
+-   npx jest --init
+-   Install JSDOM Library
+-   Install @babel/preset-react
+-   Include @babel/preset-react inside my babel config file
+-   Install @testing-library/jest-dom

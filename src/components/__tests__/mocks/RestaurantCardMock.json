@@ -1,0 +1,79 @@
+{
+    "info": {
+        "id": "53606",
+        "name": "Sweet Chariot",
+        "cloudinaryImageId": "uqj6ajrn99818wjjvxza",
+        "locality": "7th Block",
+        "areaName": "Koramangala",
+        "costForTwo": "₹500 for two",
+        "cuisines": [
+            "Desserts"
+        ],
+        "avgRating": 4.5,
+        "parentId": "912",
+        "avgRatingString": "4.5",
+        "totalRatingsString": "1K+",
+        "sla": {
+            "deliveryTime": 21,
+            "lastMileTravel": 2.5,
+            "serviceability": "SERVICEABLE",
+            "slaString": "21 mins",
+            "lastMileTravelString": "2.5 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2024-01-02 22:30:00",
+            "opened": true
+        },
+        "badges": {
+            "textExtendedBadges": [
+                {
+                    "iconId": "v1702882113/Ratnesh_Badges/20x20_px_kids__20px.png",
+                    "shortDescription": "Kids Favourite options",
+                    "fontColor": "#7E808C"
+                }
+            ]
+        },
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {},
+                "textBased": {},
+                "textExtendedBadges": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "",
+                                "fontColor": "#7E808C",
+                                "iconId": "v1702882113/Ratnesh_Badges/20x20_px_kids__20px.png",
+                                "shortDescription": "Kids Favourite options"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "₹120 OFF",
+            "subHeader": "ABOVE ₹199",
+            "discountTag": "FLAT DEAL"
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {}
+    },
+    "analytics": {},
+    "cta": {
+        "link": "https://www.swiggy.com/restaurants/sweet-chariot-7th-block-koramangala-bangalore-53606",
+        "type": "WEBLINK"
+    }
+}

@@ -72,7 +72,7 @@ const Body = () => {
   }
 
   //Conditional Rendering
-  if (listofRestaurant.length === 0) {
+  if (listofRestaurant?.length === 0) {
     return <ShimmerUI />;
   }
 
